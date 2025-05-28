@@ -5,9 +5,8 @@ const router = jsonServer.router('server/db.json')
 const middlewares = jsonServer.defaults()
 
 server.use(middlewares)
-server.use('/', router)
 server.use('/api/v1',router)
 
-server.listen(3000, () => {
+server.listen(process.env.PORT || 3000, () => {
     console.log('Json-Server is running.')
 })
